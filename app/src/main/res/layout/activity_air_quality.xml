@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.AirQualityActivity"
+    android:id="@+id/airquality_layout"
+    android:orientation="vertical"
+    android:background="@mipmap/air_quality"
+    >
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_air_quality"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        >
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_air_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_return_black">
+            </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/tv_airLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                android:text="优"
+                android:textColor="@color/green"
+                android:textSize="40sp"
+                android:layout_centerHorizontal="true"
+                 />
+            <Button
+                android:id="@+id/btn_airRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/transparent"
+                android:text="@string/activity_air_quality_rank"
+                android:textColor="@color/green"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="集美"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="60sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_day"
+            android:textColor="@color/black"
+            android:text="2021-06-30"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_time"
+            android:text="19:00"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_pm25Val"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="10dp"
+                android:drawableBottom="@drawable/ic_pm25"
+                android:gravity="center"
+                android:text="11"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_pm10Val"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toRightOf="@+id/tv_pm25Val"
+                android:drawableBottom="@drawable/ic_pm10"
+                android:gravity="center"
+                android:text="29"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_so2Val"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toRightOf="@+id/tv_pm10Val"
+                android:drawableBottom="@drawable/ic_so2"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_no2Val"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_so2Val"
+                android:drawableBottom="@drawable/ic_no2"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_o3Val"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_no2Val"
+                android:drawableBottom="@drawable/ic_o3"
+                android:gravity="center"
+                android:text="42"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_coVal"
+                android:layout_width="40dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_o3Val"
+                android:drawableBottom="@drawable/ic_co"
+                android:gravity="center"
+                android:text="0.383"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+       >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_time_air"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="15dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:itemCount="1"
+            tools:listitem="@layout/rv_item_air_quality_h" />
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_airTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/bg_shade_blue_rc_top"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_title_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/week"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_airTitle"
+            app:layout_constraintHorizontal_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/tv_title_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tv_title_week"
+            android:text="@string/date"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_airTitle"
+            app:layout_constraintHorizontal_bias="0.25"/>
+
+        <TextView
+            android:id="@+id/tv_title_aqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tv_title_data"
+            android:text="@string/AQI"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_airTitle"
+            app:layout_constraintHorizontal_bias="0.558"/>
+
+        <TextView
+            android:id="@+id/tv_title_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="68dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tv_title_aqi"
+            android:text="@string/quality"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_airTitle"
+            app:layout_constraintHorizontal_bias="0.85"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_day_air"
+            android:layout_width="match_parent"
+            android:layout_height="249dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_airTitle"
+            tools:listitem="@layout/rv_item_air_quality_v" />
+    </LinearLayout>
+</LinearLayout>

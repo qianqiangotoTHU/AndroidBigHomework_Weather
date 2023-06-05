@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_yesterday"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_fog"
+    tools:context=".ui.activity.YesterdayActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_00DEFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_return">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="昨日天气"
+            android:textColor="@color/white"
+            android:textSize="?attr/MediumText" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/main_yesterday_24_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/weather_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="单位" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_weather_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_locatl"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/rv_item_hourly_weather" />
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/main_yesterday_24_humidity"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/humidity_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="单位" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

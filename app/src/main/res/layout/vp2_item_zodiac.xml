@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vp2_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@mipmap/zodiac_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_lunar_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="2021-07-03"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_lunar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/lunar"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lunar_date" />
+
+    <TextView
+        android:id="@+id/tv_lunar_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2021"
+        android:textSize="20sp"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toStartOf="@+id/tv_lunar_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_lunar" />
+
+    <TextView
+        android:id="@+id/tv_lunar_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="五月"
+        android:textSize="20sp"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/tv_lunar_year"
+        app:layout_constraintTop_toTopOf="@+id/tv_lunar_year" />
+
+    <TextView
+        android:id="@+id/tv_lunar_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="廿四"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_lunar_month"
+        app:layout_constraintTop_toTopOf="@+id/tv_lunar_month" />
+
+    <TextView
+        android:id="@+id/tv_ganzhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/ganzhi"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tv_lunar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lunar" />
+
+    <TextView
+        android:id="@+id/tv_ganzhi_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="辛丑"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/green"
+        app:layout_constraintStart_toStartOf="@+id/tv_lunar_year"
+        app:layout_constraintTop_toTopOf="@+id/tv_ganzhi" />
+
+    <TextView
+        android:id="@+id/tv_ganzhi_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="甲午"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_ganzhi_year"
+        app:layout_constraintTop_toTopOf="@+id/tv_ganzhi_year" />
+
+    <TextView
+        android:id="@+id/tv_ganzhi_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="壬子"
+        android:textSize="20sp"
+        android:textColor="@color/green"
+        app:layout_constraintStart_toEndOf="@+id/tv_ganzhi_month"
+        app:layout_constraintTop_toTopOf="@+id/tv_ganzhi_month" />
+
+    <TextView
+        android:id="@+id/tv_zodiac_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="牛"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lunar_date"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_lunar_festival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="50dp"
+        android:text="节日"
+        android:textColor="@color/choice_ring"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_zodiac_year"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ganzhi" />
+
+    <TextView
+        android:id="@+id/tv_solar_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        android:text="节气"
+        android:textColor="@color/choice_ring"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lunar_festival"
+        app:layout_constraintStart_toEndOf="@+id/tv_zodiac_year" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

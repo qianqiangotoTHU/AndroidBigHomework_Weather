@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_clear_day"
+    tools:context=".ui.activity.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/position"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <com.nightonke.boommenu.BoomMenuButton
+            android:id="@+id/menu_boom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|end"
+            app:bmb_boomInWholeScreen="true"
+            app:bmb_buttonEnum="textOutsideCircle"
+            app:bmb_backgroundEffect="true"
+            app:bmb_normalColor="@color/transparent"
+            app:bmb_shadowColor="@color/blue"
+            app:bmb_buttonPlaceEnum="buttonPlace_sc_6_3"
+            app:bmb_hamWidth="50dp"
+            app:bmb_piecePlaceEnum="piecePlace_dot_6_3" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/search_button"
+        android:background="@drawable/ic_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+    </Button>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_alarm"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/rv_item_alarm"
+                        tools:ignore="MissingConstraints">
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <TextView
+                        android:id="@+id/tv_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="28"
+                        android:textColor="@color/white"
+                        android:textSize="120sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.057"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/rv_alarm" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/centigrade"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_temperature"
+                        app:layout_constraintTop_toTopOf="@id/tv_temperature" />
+
+                    <TextView
+                        android:id="@+id/tv_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/weather"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.05"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
+
+                    <TextView
+                        android:id="@+id/date_locatl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="07月19日"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.05"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_weather" />
+
+                    <TextView
+                        android:id="@+id/week_locatl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="星期一"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.350"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_weather" />
+                    <TextView
+                        android:id="@+id/humidity_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:text="相对湿度："
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.60"
+                        app:layout_constraintTop_toBottomOf="@+id/wind_speed" />
+                    <TextView
+                        android:id="@+id/humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:text="70%"
+                        android:textColor="@color/text_blue"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.75"
+                        app:layout_constraintTop_toBottomOf="@+id/wind_speed" />
+
+                    <TextView
+                        android:id="@+id/wind_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="76dp"
+                        android:layout_marginTop="15dp"
+                        android:text="西南 12km/h"
+                        android:textColor="@color/green"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/wind_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
+
+                    <TextView
+                        android:id="@+id/max_min_tempauture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="26℃/30℃"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_bias="0.22"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
+
+
+                    <TextView
+                        android:id="@+id/wind_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="风速风向："
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.502"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
+
+                    <ImageView
+                        android:id="@+id/bg_weather"
+                        android:layout_width="150dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="4dp"
+                        android:scaleType="fitXY"
+                        android:background="@mipmap/weather_icon_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.9"
+                        app:layout_constraintStart_toStartOf="@+id/tv_temperature"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_alarm" />
+
+                    <ListView
+                        android:id="@+id/lv_weather"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/page_margin"
+                        android:layout_marginTop="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/max_min_tempauture">
+
+                    </ListView>
+
+                    <Button
+                        android:id="@+id/btn_see_weather"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/panel"
+                        android:text="更多"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@id/lv_weather"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.95"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bg_weather"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/date_locatl"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/rv_item_hourly_weather" />
+
+                    <ImageView
+                        android:id="@+id/iv_sun_rise"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ic_sun_rise"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_bg_sun_rise"
+                        app:layout_constraintStart_toStartOf="@+id/tv_bg_sun_rise"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_sun_rise" />
+
+                    <ImageView
+                        android:id="@+id/iv_sun_set"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ic_sun_set"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_bg_sun_set"
+                        app:layout_constraintStart_toStartOf="@+id/tv_bg_sun_set"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_sun_set" />
+
+                    <View
+                        android:id="@+id/tv_bg_sun_rise"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_panel_1"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_bg_sun_set"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_time" />
+
+                    <View
+                        android:id="@+id/tv_bg_sun_set"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/bg_panel_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_bg_sun_rise"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_sun_rise" />
+
+                    <TextView
+                        android:id="@+id/tv_sun_rise_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日出7:00"
+                        android:textColor="@color/picture_color_white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_sun_rise"
+                        app:layout_constraintStart_toStartOf="@+id/iv_sun_rise"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_sun_rise" />
+
+                    <TextView
+                        android:id="@+id/tv_sun_set_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日落18:00"
+                        android:textColor="@color/picture_color_white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_sun_set"
+                        app:layout_constraintStart_toStartOf="@+id/iv_sun_set"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_sun_set" />
+
+                    <View
+                        android:id="@+id/tv_bg_moon_rise"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/bg_panel_1"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_bg_moon_set"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_bg_sun_rise" />
+
+                    <ImageView
+                        android:id="@+id/iv_moon_rise"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ic_moon_rise"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_bg_moon_rise"
+                        app:layout_constraintStart_toStartOf="@+id/tv_bg_moon_rise"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_moon_rise" />
+
+                    <TextView
+                        android:id="@+id/tv_moon_rise_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月出19:00"
+                        android:textColor="@color/picture_color_white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_moon_rise"
+                        app:layout_constraintStart_toStartOf="@+id/iv_moon_rise"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_moon_rise" />
+
+                    <View
+                        android:id="@+id/tv_bg_moon_set"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/bg_panel_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_bg_moon_rise"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_moon_rise" />
+
+                    <ImageView
+                        android:id="@+id/iv_moon_set"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ic_moon_set"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_bg_moon_set"
+                        app:layout_constraintStart_toStartOf="@+id/tv_bg_moon_set"
+                        app:layout_constraintTop_toTopOf="@+id/tv_bg_moon_set" />
+
+                    <TextView
+                        android:id="@+id/tv_moon_set_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月落7:00"
+                        android:textColor="@color/picture_color_white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_moon_set"
+                        app:layout_constraintStart_toStartOf="@+id/iv_moon_set"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_moon_set" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
